@@ -1,5 +1,0 @@
-print("Ahoj")
-print("")
-print("skiboidy toaleta")
-print('Nevim je to kokotina\n("anog us")')
-print("barinrot"+"generace\nalpha")
