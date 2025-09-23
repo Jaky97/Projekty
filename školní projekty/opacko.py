@@ -36,10 +36,20 @@ while len(number_countdown) > 0:
     number_countdown.pop()
     print(number_countdown)
 # 4. Máš seznam čísel. Pomocí for a if zjisti, kolik čísel je sudých (využij count() pro kontrolu).
+
 # 5. Vytvoř seznam měst, přidej jedno město na začátek pomocí insert().
+
 # 6. Vytvoř seznam [3, 1, 4, 1, 5, 9], zjisti kolikrát se v něm vyskytuje číslo 1 (metoda count).
+
 # 7. Ze seznamu slov odstraň jedno konkrétní slovo (metoda remove). Pokud tam není, vypiš hlášku.
+
 # 8. Zeptej se uživatele na seznam čísel, seřaď je sestupně pomocí sort(reverse=True).
+print("Napiš Svoje čisla a ukonči napsáním end")
+list = []
+while input == "end":
+        list.append(int(input("Dej cislo: ")))
+list.sort(reverse=True)
+print(list)
 # 9. Vytvoř seznam a pomocí while cyklu vypisuj a zároveň odstraňuj první prvek (pop(0)), dokud není prázdný.
 # 10. Vytvoř seznam náhodných čísel a otoč jeho pořadí metodou reverse().
 # 11. Vytvoř seznam čísel, zkopíruj jej metodou copy() a s kopií dále pracuj (např. přidej prvky).
