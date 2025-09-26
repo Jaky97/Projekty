@@ -1,18 +1,5 @@
-def sumOfNums(x, y):
-    return x + y
-print(sumOfNums(3, 5))
-print(sumOfNums(3.11, 5))
-print(sumOfNums("Čau", "Vole!"))
-print(sumOfNums(3, sumOfNums(5,7)))
+#FirstName: Lastname: Ranking: Price_Money:
+def businesscard(**person):
+    print(f"{person['firstname']} {person['lastname']} is ranked {person['ranking']} and has won ${person['pricemoney']} so far this year.")
 
-print( "\n \n \n \n" )
-print("Je tu mezera?")
-
-#5 -14 9 -6
-s = sumOfNums
-p = print
-
-p(s(s(5, -14,), s(9, -6)))
-
-def sumOfNuns2(*nums):
-    return sum(nums)
+businesscard(firstname = "Franta", lastname = "Dvořák", ranking = "2" , pricemoney = "5000")
