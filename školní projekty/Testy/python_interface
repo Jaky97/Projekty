@@ -1,0 +1,80 @@
+from abc import ABC, abstractmethod
+
+
+class smarthome(ABC):
+
+    @abstractmethod
+    def setProperties(self, **kwargs):
+        pass
+
+    @abstractmethod
+    def getProperties(self, **kwargs):
+        pass
+
+class lights(smarthome):
+
+    def __init__(self, name, room, type_of_light, luminosity, color):
+        self.name = name
+        self.room = room
+        self.type_of_light = type_of_light
+        self.luminosity = luminosity
+        self.color = color
+
+    def setProperties(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def getProperties(self, **kwargs):
+        if not kwargs:
+            return vars(self)
+
+        result = {}
+        for key in kwargs.keys():
+            result[key] = getattr(self, key)
+        return result
+
+class routers(smarthome):
+
+    def __init__(self, name, room, IP, supported_frequencies, mesh):
+        self.name = name
+        self.room = room
+        self.IP = IP
+        self.supported_frequencies = supported_frequencies
+        self.mesh = mesh
+
+    def setProperties(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def getProperties(self, **kwargs):
+        if not kwargs:
+            return vars(self)
+
+        result = {}
+        for key in kwargs.keys():
+            result[key] = getattr(self, key)
+        return result
+
+if __name__ == "__main__":
+    light = lights(
+        name="Ceiling Light",
+        room="Bedroom",
+        type_of_light="LED",
+        luminosity=80,
+        color="Warm White")
+
+    router = routers(
+        name="Asus Router",
+        room="Office",
+        IP="197.143.1.1",
+        supported_frequencies=[2.4, 5],
+        mesh=False)
+
+    light.setProperties(luminosity=60, color="Blue")
+    router.setProperties(IP="197.143.1.254")
+
+    print(light.getProperties())
+    print(light.getProperties(name=True, color=True))
+
+    print(router.getProperties())
+    print(router.getProperties(IP=True, mesh=True))
