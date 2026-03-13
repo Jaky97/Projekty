@@ -13,19 +13,19 @@ while True:
     if action == "1":
         print("\n""\n")
 #timer and autoclicker
-        speed = float(input("Zadej rychlost v sekundách): "))
+        speed = float(input("Zadej rychlost v sekundách: "))
         seconds = 5
         for i in range(seconds, 0, -1):
             if i == 1:
                 print(f"{0} sekunda zbývá...")
-                print("Zastav pomocí klávesy 'q'")
+                print("Zastav pomocí klávesy 'o'")
             else:
                 print(f"{i} sekund zbývá...", end="\r")
             time.sleep(1)
         print("Spouštím autoclicker...")
         status = True
         while status == True:
-            if keyboard.is_pressed("q"):
+            if keyboard.is_pressed("o"):
                 print("Autoclicker zastaven.")
                 status = False
                 print("\n""\n")
@@ -38,7 +38,7 @@ while True:
         print("|                             Guide                              |")
         print("|  Zadej rychlost v sekundách. '1's pro menší čísla zadej '0.1's |")
         print("|  Po zadání čísla se spustí 5s časovač pro přesun kurzoru       |")
-        print("|  Pro ukončení stisni klávesu 'q'                               |")
+        print("|  Pro ukončení stisni klávesu 'o'                               |")
         print("\n""\n")
 
     elif action == "3":
