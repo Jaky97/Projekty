@@ -36,7 +36,8 @@ while True:
             else:
                 print("error pičo")
             
-        print(password.join())
+        print(''.join(password)+"\n")
+        password.clear()
 
     elif choice == "2":
         print("\n|          Settings                 |")
